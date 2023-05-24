@@ -1,0 +1,138 @@
+$black: #19F96D  ;
+$white: #fff;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Avenir, Poppins, -apple-system, BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Open Sans, Helvetica Neue, sans-serif;
+  font-size: 16px;
+  color: $black;
+}
+
+header {
+  .header-inner {
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .header-inner-nav {
+      ul {
+        display: flex;
+        list-style: none;
+        align-items: center;
+        li {
+          margin-right: 32px;
+          &:last-child {
+            margin-right: 0;
+          }
+          &.menu {
+            display: flex;
+            align-items: center;
+            p {
+              margin-right: 16px;
+            }
+            .menu-icon {
+              div {
+                width: 24px;
+                height: 2px;
+                margin-bottom: 8px;
+                background-color: $black;
+                &:last-child {
+                  margin-bottom: 0;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.banner-container {
+  width: 100%;
+  height: 600px;
+  padding: 24px;
+  display: flex;
+  .banner-inner {
+    max-width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .banner-title{
+      h2 {
+        font-weight: normal;
+        padding: 0px 24px;
+      }
+    }
+    .banner-items-container {
+      display: flex;
+      .banner-item {
+        h1 {
+          padding: 0px 24px;
+          font-size: 6rem;
+          margin: 0;
+          color: $black;
+          -webkit-text-fill-color:#29D66A  ;
+          -webkit-text-stroke-width: 1px;
+          -webkit-text-stroke-color:black ;
+          cursor: pointer;
+          z-index: 10;
+          &:hover {
+            mix-blend-mode: exclusion;
+            -webkit-text-fill-color: $white;
+          }
+        }
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+.main-body{
+  padding: 24px;
+  display: flex;
+  .main-body-inner {
+    max-width: 70%;
+    margin: 0 auto;
+    font-size: 2.4rem;
+    line-height: 4rem;
+    font-weight: normal;
+  }
+}
+
+.cursor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  background-color: $black;
+  border-radius: 100%;
+  z-index: -1;
+  .video-wrapper {
+    position: relative;
+    display: flex;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    overflow: hidden;
+    video{
+      position: absolute; 
+      top: 0; 
+      left: 0;
+      height: 100%;
+    }
+  }
+}

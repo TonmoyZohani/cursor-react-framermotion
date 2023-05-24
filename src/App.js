@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import useMousePosition from "./hooks/useMousePosition";
+import Banner from "./components/banner";
+import Cursor from "./components/cursor";
 
-function App() {
+import getCursorProps from "./getCursorProps";
+import "./styles.scss";
+
+export default function App() {
+  const [bannerElements, setBannerElements] = useState({});
+  const mousePosition = useMousePosition();
+  const [cursorProps, setCursorProps] = useState({
+    videoID: null,
+    scale: 1
+  });
+
+  useEffect(() => {
+    setCursorProps(getCursorProps(bannerElements, mousePosition));
+  }, [bannerElements, mousePosition]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Banner setBannerElements={setBannerElements} />
+      <Cursor cursorProps={cursorProps} />  
     </div>
   );
 }
-
-export default App;
